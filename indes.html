@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Vue</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <h5>~最初の挨拶~</h5>
+  <div id="app1">
+    {{ greet }}
+
+  </div>
+
+  <h1>v-bind</h1>
+  <div id="app2">
+    <span :title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+
+  </div>
+
+  <h1>v-if</h1>
+  <div id="app3">
+    <span v-if="seen">Now you see me</span>
+
+  </div>
+
+  <h1>v-for</h1>
+  <div id="app4">
+    <ol>
+      <li v-for="todo in todoList">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+
+  <h1>v-on</h1>
+  <div id="app5">
+    <p>{{ message }}</p>
+    <button @click="reverseMessage">Reverse Message</button>
+
+  </div>
+
+  <h1>v-model</h1>
+  <div id="app6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <h1>コンポーネント</h1>
+  <div id="app7">
+    <todo-item
+      v-for="item in groceryList"
+      :todo="item"
+      :key="item.id"
+    ></todo-item>
+  </div>
+
+  <hr>
+
+  <h5>~データを持たせる~</h5>
+  <div id="app8">
+    <button-count></button-count>
+  </div>
+
+  <hr>
+
+  <h5>~ルート要素は1つ~</h5>
+  <div id="app9">
+    <button-2characters></button-2characters>
+
+  </div>
+
+  <hr>
+
+  <h5>ルート要素は1つ(v-for)</h5>
+  <div id="app10">
+    <button-3characters @click="pages()"></button-3characters>
+  </div>
+
+  <h1>グローバル登録</h1>
+  <h5>~全てのインスタンスで使用可~</h5>
+  <div id="app11">
+    <button-5characters></button-5characters>
+  </div>
+
+  <h1>ローカル登録</h1>
+  <h5>~特定のコンポーネントのみ使用~</h5>
+  <div id="app12">
+    <p>ローカル</p>
+    <local-characters></local-characters>
+  </div>
+
+  <h1>コンポーネント間の通信</h1>
+  <h5>~親子コンポーネント~</h5>
+  <div id="app13">
+    <d-family></d-family>
+  </div>
+
+  <hr>
+
+  <h5>~親から子へ~</h5>
+  <div id="app14">
+    <d-family></d-family>
+  </div>
+
+  <hr>
+
+  <h5>~子から親へ~</h5>
+  <div id="app15">
+    <a-family></a-family>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
